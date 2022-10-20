@@ -1,0 +1,51 @@
+// // const studentObject = {
+// //     NAME: "Vaibhav",
+// //     CGPA: 0,
+// //     address: {
+// //         city: "Ranchi",
+// //         state: "Jharkhand",
+// //         region: "Diptih"
+// //     },
+// //     "Favourite Hobby": "Painting"
+// // }
+// // console.log(studentObject["Favourite Hobby"])
+
+// // const { NAME } = studentObject;
+// // console.log(NAME)
+// const parser = require('simple-excel-to-json')
+// const doc = parser.parseXls2Json('./exampl.xlsx')[0];
+// // console.log(doc)
+// const json2xls = require("json2xls")
+// const fs = require("fs")
+// const total_cgpa = doc.reduce((prevValue, currentValue) => {
+//     prevValue += currentValue.CGPA;
+//     return prevValue;
+// }, 0)
+
+// const avg_cgpa = total_cgpa / doc.length;
+// console.log(avg_cgpa)
+// // A+  = 9.5 , A =9 and above , B = 8.5 and above , C = 8 and above
+// const gradedDocument = doc.map((student) => {
+//     if (student.CGPA > 9.5) {
+//         student.GRADE = "A+"
+//     }
+//     else if (student.CGPA >= 9) {
+//         student.GRADE = "A";
+//     }
+//     else if (student.CGPA >= 8.5) {
+//         student.GRADE = "B";
+//     }
+//     else if (student.CGPA >= 8) {
+//         student.GRADE = "C";
+//     }
+//     else {
+//         student.GRADE = "F";
+//     }
+//     return student;
+// })
+// const filteredDocument = gradedDocument.filter(student => student.CGPA > 8);
+// gradedDocument.push({ CGPA: avg_cgpa, NAME: "Average Grades" })
+// const excelDocument = json2xls(gradedDocument);
+
+// fs.writeFileSync("Grades.xlsx", excelDocument, "binary")
+// console.log(filteredDocument)
